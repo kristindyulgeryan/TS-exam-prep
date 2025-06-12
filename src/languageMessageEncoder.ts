@@ -16,4 +16,22 @@ export class LanguageMessageEncoder<
   constructor(lang: TLang, cipher: TCipher) {
     super(lang, cipher);
   }
+
+  public encodeMessage(secretMessage: unknown) {
+    if (typeof secretMessage !== "string" || secretMessage.length === 0) {
+      return "No message.";
+    }
+
+    const strippedMessage = this.stripForbiddenSymbols(secretMessage);
+
+    const isCompatible = this.language.isCompatibleToCharset(strippedMessage);
+
+    if (!isCompatible) {
+      return "Message not compatible.";
+    }
+
+    const encodeMessage = this.cipher.encipher(strippedMessage);
+    this.encodedCount += encodeMessage.length;
+    return encodeMessage;
+  }
 }
