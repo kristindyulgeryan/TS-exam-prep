@@ -3,7 +3,7 @@ import { decorator4 } from "../../decorators";
 import { Cipher } from "../cipher";
 import { MessageEncoder } from "../messageEncoder";
 
-// @decorator4
+@decorator4
 export abstract class PartialMessageEncoder implements MessageEncoder {
   protected _language: unknown;
   protected _cipher: unknown;
