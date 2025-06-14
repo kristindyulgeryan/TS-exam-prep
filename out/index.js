@@ -4,35 +4,38 @@ const caesarCipher_1 = require("./contracts/implemented/caesarCipher");
 const languageMessageEncoder_1 = require("./languageMessageEncoder");
 const lowercaseCharactersOnlyLanguage_1 = require("./contracts/implemented/lowercaseCharactersOnlyLanguage");
 // Example 1
+// let lowercaseCharsLanguage = new LowercaseCharactersOnlyLanguage();
+// let caesarCipher = new CaesarCipher(lowercaseCharsLanguage);
+// let encoder = new LanguageMessageEncoder<
+//   LowercaseCharactersOnlyLanguage,
+//   CaesarCipher<LowercaseCharactersOnlyLanguage>
+// >(lowercaseCharsLanguage, caesarCipher);
+// let encodedMessage = encoder.encodeMessage("the carthaginians are coming");
+// console.log(encodedMessage);
+// let decodedMessage = encoder.decodeMessage(encodedMessage);
+// console.log(decodedMessage);
+// console.log(encoder.totalProcessedCharacters("Both"));
+// let encodedMessage2 = encoder.encodeMessage("!abc_");
+// console.log(encodedMessage2);
+// let decodedMessage2 = encoder.decodeMessage(encodedMessage2);
+// console.log(decodedMessage2);
+// console.log(encoder.totalProcessedCharacters("Encoded"));
+// Example 2
 let lowercaseCharsLanguage = new lowercaseCharactersOnlyLanguage_1.LowercaseCharactersOnlyLanguage();
 let caesarCipher = new caesarCipher_1.CaesarCipher(lowercaseCharsLanguage);
 let encoder = new languageMessageEncoder_1.LanguageMessageEncoder(lowercaseCharsLanguage, caesarCipher);
-let encodedMessage = encoder.encodeMessage("the carthaginians are coming");
+let encodedMessage = encoder.encodeMessage(undefined);
 console.log(encodedMessage);
-let decodedMessage = encoder.decodeMessage(encodedMessage);
+let decodedMessage = encoder.decodeMessage(true);
 console.log(decodedMessage);
-console.log(encoder.totalProcessedCharacters("Both"));
-let encodedMessage2 = encoder.encodeMessage("!abc_");
+let encodedMessage2 = encoder.encodeMessage(undefined);
 console.log(encodedMessage2);
-let decodedMessage2 = encoder.decodeMessage(encodedMessage2);
+let decodedMessage2 = encoder.decodeMessage(true);
 console.log(decodedMessage2);
-console.log(encoder.totalProcessedCharacters("Encoded"));
-// Example 2
-// let lowercaseCharsLanguage = new LowercaseCharactersOnlyLanguage();
-// let caesarCipher = new CaesarCipher(lowercaseCharsLanguage);
-// let encoder = new LanguageMessageEncoder<LowercaseCharactersOnlyLanguage, CaesarCipher<LowercaseCharactersOnlyLanguage>>(lowercaseCharsLanguage, caesarCipher);
-// let encodedMessage = encoder.encodeMessage(undefined);
-// console.log(encodedMessage);
-// let decodedMessage = encoder.decodeMessage(true);
-// console.log(decodedMessage);
-// let encodedMessage2 = encoder.encodeMessage(undefined);
-// console.log(encodedMessage2);
-// let decodedMessage2 = encoder.decodeMessage(true);
-// console.log(decodedMessage2);
-// let encodedMessage3 = encoder.encodeMessage('1abc');
-// console.log(encodedMessage3);
-// let decodedMessage3 = encoder.decodeMessage('test"12"');
-// console.log(decodedMessage3);
+let encodedMessage3 = encoder.encodeMessage("1abc");
+console.log(encodedMessage3);
+let decodedMessage3 = encoder.decodeMessage('test"12"');
+console.log(decodedMessage3);
 // Example 3
 // let lowercaseCharsLanguage = new LowercaseCharactersOnlyLanguage();
 // let caesarCipher = new CaesarCipher(lowercaseCharsLanguage);
